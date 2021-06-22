@@ -1,6 +1,5 @@
 package br.com.zupacademytransacoes.apitransacoes.kafkaconfig;
 
-import br.com.zupacademytransacoes.apitransacoes.dto.TransacaoKafkaEventoResponse;
 import br.com.zupacademytransacoes.apitransacoes.model.Transacao;
 import br.com.zupacademytransacoes.apitransacoes.repositories.TransacaoRepositories;
 

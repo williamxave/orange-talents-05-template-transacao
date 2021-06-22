@@ -1,6 +1,4 @@
-package br.com.zupacademytransacoes.apitransacoes.dto;
-
-import br.com.zupacademytransacoes.apitransacoes.model.Cartao;
+package br.com.zupacademytransacoes.apitransacoes.kafkaconfig;
 
 import javax.validation.constraints.NotBlank;
 
@@ -20,13 +18,6 @@ public class CartaoEvento {
 
     @Deprecated
     public CartaoEvento() {
-    }
-
-    public Cartao toModel(){
-        return  new Cartao(
-                this.id,
-                this.email
-        );
     }
 
     public String getId() {

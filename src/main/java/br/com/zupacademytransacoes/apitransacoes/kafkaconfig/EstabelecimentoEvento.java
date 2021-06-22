@@ -1,4 +1,4 @@
-package br.com.zupacademytransacoes.apitransacoes.dto;
+package br.com.zupacademytransacoes.apitransacoes.kafkaconfig;
 
 import javax.validation.constraints.NotBlank;
 
