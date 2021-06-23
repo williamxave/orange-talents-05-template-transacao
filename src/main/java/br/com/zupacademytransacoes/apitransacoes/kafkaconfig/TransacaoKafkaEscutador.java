@@ -1,15 +1,18 @@
 package br.com.zupacademytransacoes.apitransacoes.kafkaconfig;
 
+import br.com.zupacademytransacoes.apitransacoes.customexceptions.DocumentException;
 import br.com.zupacademytransacoes.apitransacoes.model.Transacao;
 import br.com.zupacademytransacoes.apitransacoes.repositories.TransacaoRepositories;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Bean;
+
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.kafka.support.converter.JsonMessageConverter;
 import org.springframework.stereotype.Component;
 
+import java.util.Optional;
 @Component
 public class TransacaoKafkaEscutador {
 
@@ -28,7 +31,8 @@ public class TransacaoKafkaEscutador {
     @KafkaListener(topics = "${spring.kafka.topic.transacoes}")
     public void escutador(TransacaoKafkaEventoResponse transacaoKafkaEventoResponse){
         logger.info("Escutando");
-        Transacao transacao = transacaoKafkaEventoResponse.toModel();
-        transacaoRepositories.save(transacao);
+           Transacao transacao = transacaoKafkaEventoResponse.toModel();
+            transacaoRepositories.save(transacao);
+        }
     }
-}
+
